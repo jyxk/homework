@@ -12,12 +12,12 @@ int main(void){
             days[1] = 28;
         if(month == 1){
             ans = day;
-            printf("该日期是这一年中的第%d天\n", ans);
+            printf("璇ユ棩鏈熸槸杩欎竴骞翠腑鐨勭%d澶‐n", ans);
         }
         else{
             for(int i = 0; i < month-1; i++)
                 ans += days[i];
-        printf("该日期是这一年中的第%d天\n", ans + day);
+        printf("璇ユ棩鏈熸槸杩欎竴骞翠腑鐨勭%d澶‐n", ans + day);
         }
     ans = year = month = day = ans = 0;
     }

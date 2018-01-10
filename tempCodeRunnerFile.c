@@ -1,23 +1,34 @@
 #include <stdio.h>
 
+struct Date{
+    int year, month, day;
+} Date;
+
+
 int main(void){
     int n;
-    int j;
-    int i;
-    char *ptr;
-    char str[10][10] = {};
-    char result[100] = {};
-    while(scanf("%d", &n) && n){
-        for (i = 0; i < n; i++)
-            scanf("%s", str[i]);
-        ptr = result;
-        for (i = 0; i < n; i++){
-            for (j = 0; *(str[i] + j); j++){
-				*ptr = *(*(str+i)+j);
-				ptr++;
-			}
+    int days[12] = {31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int ans;
+
+    scanf("%d", &n);
+    while(n--){
+        scanf("%d %d %d", &Date.year, &Date.month, &Date.day);
+
+        if(((Date.year%4 == 0) && (Date.year%100)) || (Date.year%400 == 0))
+            days[1] = 29;
+        else
+            days[1] = 28;
+        if(Date.month == 1){
+            ans = Date.day;
+            printf("%d\n", ans);
         }
-        printf("%s\n", result);
+        else{
+            for(int i = 0; i < Date.month-1; i++)
+                ans += days[i];
+        printf("%d\n", ans + Date.day);
+        }
+    ans = Date.year = Date.month = Date.day = 0;
+
     }
     return 0;
 }
